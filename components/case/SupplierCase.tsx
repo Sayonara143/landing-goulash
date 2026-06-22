@@ -157,7 +157,7 @@ export function SupplierCase() {
           }}
         >
           <a
-            href="#demo"
+            href="/app"
             className="neo-case-button"
             style={{
               display: "inline-flex",
@@ -174,7 +174,7 @@ export function SupplierCase() {
               boxShadow: "5px 5px 0 #F4EFE2",
             }}
           >
-            Запустить демо ⬇
+            Запустить демо ↗
           </a>
           <a
             href="#architecture"

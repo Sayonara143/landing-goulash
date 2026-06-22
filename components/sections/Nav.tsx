@@ -1,6 +1,7 @@
 import { profile } from "@/lib/data";
 
 const links = [
+  { href: "/app", label: "Задание 2", className: "neo-nav-link--yellow" },
   { href: "#relevance", label: "Релевантность", className: "neo-nav-link--yellow" },
   { href: "#case", label: "Кейс", className: "neo-nav-link--cyan" },
   { href: "#demo", label: "Демо", className: "neo-nav-link--pink" },

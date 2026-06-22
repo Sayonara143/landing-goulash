@@ -10,6 +10,7 @@ import { Experience } from "@/components/sections/Experience";
 import { Skills } from "@/components/sections/Skills";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
+import { CursorCat } from "@/components/sections/CursorCat";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         <Skills />
         <Contact />
       </main>
+      <CursorCat />
       <Footer />
     </>
   );

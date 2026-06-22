@@ -16,6 +16,15 @@ body {
   background-color: #f4efe2;
 }
 
+html.cursor-cat-is-active,
+html.cursor-cat-is-active *,
+body.cursor-cat-is-active,
+body.cursor-cat-is-active * {
+  cursor: url("/svg/seraya_myshka_cursor.svg") 24 24,
+    url("/svg/seraya_myshka.svg") 18 18,
+    auto !important;
+}
+
 @keyframes ticker {
   from {
     transform: translateX(0);

@@ -1,0 +1,78 @@
+<svg width="64" height="64" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .mouse-fill {
+        fill: #b6b6b6;
+        stroke: #000;
+        stroke-width: 26;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+      }
+
+      .mouse-fill-light {
+        fill: #c8c8c8;
+        stroke: #000;
+        stroke-width: 26;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+      }
+
+      .inner-ear {
+        fill: #ff7777;
+        stroke: #000;
+        stroke-width: 20;
+      }
+
+      .line {
+        fill: none;
+        stroke: #000;
+        stroke-width: 22;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .eye {
+        fill: #fff;
+        stroke: #000;
+        stroke-width: 20;
+      }
+
+      .black {
+        fill: #000;
+      }
+    </style>
+  </defs>
+
+  <path
+    class="mouse-fill-light"
+    d="M865 890 C960 855 1015 730 1055 610 C1090 640 1110 685 1105 735 C1090 870 985 1010 855 1035 C875 990 885 940 865 890 Z"
+  />
+  <path
+    class="mouse-fill"
+    d="M325 700 C275 760 270 885 305 995 C345 1085 480 1090 610 1090 C745 1090 875 1085 910 995 C955 880 930 755 875 700 Z"
+  />
+  <path class="mouse-fill" d="M350 970 L350 1090 L435 1090 L450 985 Z" />
+  <path class="mouse-fill" d="M525 990 L515 1090 L600 1090 L610 990 Z" />
+  <path class="mouse-fill" d="M695 990 L705 1090 L790 1090 L770 990 Z" />
+  <circle class="mouse-fill-light" cx="315" cy="270" r="135" />
+  <circle class="mouse-fill-light" cx="895" cy="270" r="135" />
+  <circle class="inner-ear" cx="335" cy="285" r="82" />
+  <circle class="inner-ear" cx="875" cy="285" r="82" />
+  <path
+    class="mouse-fill"
+    d="M230 410 C275 270 430 210 600 215 C770 210 920 270 965 410 C1015 565 935 695 745 715 L455 715 C265 695 180 565 230 410 Z"
+  />
+  <ellipse class="eye" cx="505" cy="390" rx="75" ry="70" transform="rotate(-8 505 390)" />
+  <circle class="black" cx="520" cy="400" r="24" />
+  <ellipse class="eye" cx="760" cy="410" rx="78" ry="70" transform="rotate(15 760 410)" />
+  <circle class="black" cx="780" cy="415" r="24" />
+  <ellipse class="black" cx="625" cy="500" rx="43" ry="30" />
+  <path class="line" d="M625 525 C625 575 590 610 555 575" />
+  <path class="line" d="M625 525 C625 575 660 610 700 570" />
+  <line class="line" x1="360" y1="430" x2="170" y2="395" />
+  <line class="line" x1="365" y1="500" x2="125" y2="500" />
+  <line class="line" x1="355" y1="550" x2="130" y2="600" />
+  <line class="line" x1="850" y1="430" x2="1055" y2="380" />
+  <line class="line" x1="860" y1="500" x2="1110" y2="500" />
+  <line class="line" x1="850" y1="550" x2="1030" y2="565" />
+</svg>

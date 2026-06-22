@@ -134,7 +134,7 @@ export function Hero() {
             }}
           >
             <a
-              href="#demo"
+              href="/app"
               className="neo-action-button"
               style={{
                 display: "inline-flex",

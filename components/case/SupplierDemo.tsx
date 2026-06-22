@@ -124,10 +124,13 @@ export function SupplierDemo() {
               {demoQuery.city}, {demoQuery.region}
             </div>
           </div>
-          <button
-            type="button"
+          <a
+            href="/app"
             className="neo-demo-button"
             style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
               fontWeight: 700,
               fontSize: 16,
               padding: "14px 22px",
@@ -136,12 +139,12 @@ export function SupplierDemo() {
               background: "#FFCE2E",
               color: "#111",
               boxShadow: "4px 4px 0 #111",
-              cursor: "pointer",
+              textDecoration: "none",
               whiteSpace: "nowrap",
             }}
           >
             Найти поставщиков
-          </button>
+          </a>
         </div>
       </div>
 
