@@ -3,6 +3,7 @@ import { profile } from "@/lib/data";
 export function Footer() {
   return (
     <footer
+      className="section-pad"
       style={{
         background: "#111",
         borderTop: "3px solid #F4EFE2",

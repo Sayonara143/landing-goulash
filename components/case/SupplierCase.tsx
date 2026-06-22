@@ -14,7 +14,7 @@ export function SupplierCase() {
         fontFamily: "'Space Grotesk', sans-serif",
       }}
     >
-      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 24px" }}>
+      <div className="section-pad" style={{ maxWidth: 1180, margin: "0 auto", padding: "0 24px" }}>
         <span
           style={{
             display: "inline-block",
@@ -57,6 +57,7 @@ export function SupplierCase() {
         </p>
 
         <div
+          className="grid-3"
           style={{
             marginTop: 42,
             display: "grid",

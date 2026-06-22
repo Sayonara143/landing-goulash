@@ -3,6 +3,7 @@ import { scoreModel } from "@/lib/supplier";
 export function ScoreModel() {
   return (
     <section
+      className="section-pad"
       style={{
         maxWidth: 1180,
         margin: "0 auto",
@@ -52,6 +53,7 @@ export function ScoreModel() {
         «магическая оценка», а понятный приоритет обзвона.
       </p>
       <div
+        className="grid-asym"
         style={{
           marginTop: 32,
           display: "grid",

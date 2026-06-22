@@ -11,6 +11,7 @@ export function RoleFit() {
     >
       <section
         id="relevance"
+        className="section-pad"
         style={{ maxWidth: 1180, margin: "0 auto", padding: "70px 24px" }}
       >
         <span
@@ -44,7 +45,7 @@ export function RoleFit() {
           {roleFit.map((row, index) => (
             <div
               key={row.need}
-              className="neo-relevance-card"
+              className="neo-relevance-card split-2"
               style={{
                 background: "#fff",
                 border: "3px solid #111",

@@ -10,6 +10,20 @@
 
 html {
   scroll-behavior: smooth;
+  /* Чтобы якорные ссылки не прятались под липкой навигацией */
+  scroll-padding-top: 96px;
+}
+
+/* Никакого горизонтального скролла из-за декора/теней.
+   clip (а не hidden) — чтобы не ломать position: sticky у навигации. */
+body {
+  overflow-x: clip;
+}
+
+/* Картинки и svg не вылезают за контейнер */
+img,
+svg {
+  max-width: 100%;
 }
 
 body {
@@ -133,5 +147,114 @@ body.cursor-cat-is-active * {
   .neo-project-card:hover {
     transform: translate(3px, 3px);
     box-shadow: 3px 3px 0 #111 !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Адаптив. Раскладки заданы инлайн-стилями (выигрывают по
+   специфичности), поэтому переопределяем их через !important
+   в медиа-запросах. Брейкпоинты подобраны под «плавное»
+   схлопывание колонок: 3 → 2 → 1.
+   ───────────────────────────────────────────────────────────── */
+
+/* Планшеты: трёхколоночный пайплайн → две колонки */
+@media (max-width: 900px) {
+  .grid-3 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* Узкие планшеты: ассиметричные раскладки и герой → одна колонка */
+@media (max-width: 800px) {
+  .grid-asym,
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-grid {
+    gap: 36px !important;
+    padding-top: 44px !important;
+  }
+
+  /* Фото героя над текстом смотрится логичнее на мобильном порядке —
+     но оставляем текст первым ради SEO/доступности. Просто центрируем. */
+  .hero-media {
+    min-height: auto !important;
+    justify-self: center;
+  }
+}
+
+/* Телефоны: всё в одну колонку, узкие поля */
+@media (max-width: 640px) {
+  .grid-2,
+  .grid-3,
+  .demo-form-grid,
+  .split-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Разделитель внутри сплит-карточек: вертикальный → горизонтальный */
+  .split-2 > :first-child {
+    border-right: none !important;
+    border-bottom: 3px solid #111 !important;
+  }
+
+  /* Боковой декор героя уходит за край экрана — прячем на телефоне */
+  .hero-deco-side {
+    display: none !important;
+  }
+
+  /* Фото героя становится резиновым, сохраняя пропорции */
+  .hero-photo {
+    width: min(300px, 74vw) !important;
+    height: auto !important;
+    aspect-ratio: 300 / 360;
+  }
+
+  /* Поля-«гаттеры»: уменьшаем горизонтальные отступы, вертикальные не трогаем */
+  .section-pad {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* На телефоне меню уже скрыто за гамбургером (см. брейкпоинт 960px). */
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Навигация ≤ 960px: горизонтальное меню сворачивается в
+   гамбургер-кнопку, ссылки раскрываются выпадающим списком вниз.
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .nav-burger {
+    display: inline-flex !important;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
+    padding: 12px 24px 18px !important;
+    background: #f4efe2;
+    border-bottom: 3px solid #111;
+    box-shadow: 0 6px 0 rgba(17, 17, 17, 0.12);
+    font-size: 16px !important;
+  }
+
+  .nav-links[data-open="false"] {
+    display: none !important;
+  }
+
+  .nav-links[data-open="true"] {
+    display: flex !important;
+  }
+
+  .nav-links .neo-nav-link {
+    padding: 11px 14px;
+    border: 2px solid transparent;
   }
 }

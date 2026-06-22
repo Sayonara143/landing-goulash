@@ -4,6 +4,7 @@ export function EngineeringNotes() {
   return (
     <section
       id="architecture"
+      className="section-pad"
       style={{
         maxWidth: 1180,
         margin: "0 auto",
@@ -40,6 +41,7 @@ export function EngineeringNotes() {
         Почему такая архитектура
       </h2>
       <div
+        className="grid-asym"
         style={{
           display: "grid",
           gridTemplateColumns: "1.25fr 0.75fr",
@@ -51,7 +53,7 @@ export function EngineeringNotes() {
           {engineeringDecisions.map((item) => (
             <div
               key={item.decision}
-              className="neo-architecture-card"
+              className="neo-architecture-card split-2"
               style={{
                 background: "#fff",
                 border: "3px solid #111",

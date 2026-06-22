@@ -4,6 +4,7 @@ export function Experience() {
   return (
     <section
       id="experience"
+      className="section-pad"
       style={{
         maxWidth: 1180,
         margin: "0 auto",

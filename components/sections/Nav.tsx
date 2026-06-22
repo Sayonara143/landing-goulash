@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { profile } from "@/lib/data";
 
 const links = [
@@ -11,6 +14,8 @@ const links = [
 ];
 
 export function Nav() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <div
@@ -46,6 +51,7 @@ export function Nav() {
       </div>
 
       <nav
+        className="section-pad"
         style={{
           position: "sticky",
           top: 0,
@@ -57,6 +63,7 @@ export function Nav() {
         }}
       >
         <div
+          className="nav-bar"
           style={{
             maxWidth: 1180,
             margin: "0 auto",
@@ -96,7 +103,38 @@ export function Nav() {
             <span style={{ fontWeight: 700, fontSize: 18 }}>{profile.name}</span>
           </a>
 
+          <button
+            type="button"
+            className="nav-burger"
+            aria-label="Меню"
+            aria-expanded={open}
+            aria-controls="nav-menu"
+            onClick={() => setOpen((v) => !v)}
+            style={{
+              display: "none",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 44,
+              height: 44,
+              background: open ? "#FFCE2E" : "#F4EFE2",
+              border: "3px solid #111",
+              borderRadius: 11,
+              boxShadow: "3px 3px 0 #111",
+              cursor: "pointer",
+              padding: 0,
+            }}
+          >
+            <span aria-hidden style={{ position: "relative", width: 22, height: 16, display: "block" }}>
+              <span style={burgerLine(open ? { transform: "translateY(7px) rotate(45deg)" } : { top: 0 })} />
+              <span style={burgerLine(open ? { opacity: 0 } : { top: 7 })} />
+              <span style={burgerLine(open ? { transform: "translateY(-7px) rotate(-45deg)" } : { top: 14 })} />
+            </span>
+          </button>
+
           <div
+            id="nav-menu"
+            className="nav-links"
+            data-open={open}
             style={{
               display: "flex",
               alignItems: "center",
@@ -111,6 +149,7 @@ export function Nav() {
                 key={l.href}
                 href={l.href}
                 className={`neo-nav-link ${l.className}`}
+                onClick={() => setOpen(false)}
               >
                 {l.label}
               </a>
@@ -120,4 +159,17 @@ export function Nav() {
       </nav>
     </>
   );
+}
+
+function burgerLine(extra: React.CSSProperties): React.CSSProperties {
+  return {
+    position: "absolute",
+    left: 0,
+    width: "100%",
+    height: 3,
+    background: "#111",
+    borderRadius: 2,
+    transition: "transform 0.2s ease, opacity 0.2s ease, top 0.2s ease",
+    ...extra,
+  };
 }

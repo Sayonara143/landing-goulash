@@ -27,6 +27,7 @@ export function Hero() {
     >
       <section
         id="top"
+        className="hero-grid section-pad"
         style={{
           maxWidth: 1180,
           margin: "0 auto",
@@ -252,6 +253,7 @@ export function Hero() {
 
         <motion.div
           {...m(0.16)}
+          className="hero-media"
           style={{
             position: "relative",
             display: "flex",
@@ -272,6 +274,7 @@ export function Hero() {
             }}
           >
             <div
+              className="hero-photo"
               style={{
                 display: "block",
                 width: 300,
@@ -313,6 +316,7 @@ export function Hero() {
             Александр
           </div>
           <div
+            className="hero-deco-side"
             style={{
               position: "absolute",
               top: 30,
@@ -332,6 +336,7 @@ export function Hero() {
             </svg>
           </div>
           <div
+            className="hero-deco-side"
             style={{
               position: "absolute",
               bottom: 38,

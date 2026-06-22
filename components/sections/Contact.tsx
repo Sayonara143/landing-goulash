@@ -11,7 +11,7 @@ export function Contact() {
         fontFamily: "'Space Grotesk', sans-serif",
       }}
     >
-      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 24px" }}>
+      <div className="section-pad" style={{ maxWidth: 1180, margin: "0 auto", padding: "0 24px" }}>
         <span
           style={{
             display: "inline-block",

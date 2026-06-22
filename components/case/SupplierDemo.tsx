@@ -4,6 +4,7 @@ export function SupplierDemo() {
   return (
     <section
       id="demo"
+      className="section-pad"
       style={{
         maxWidth: 1180,
         margin: "0 auto",
@@ -65,6 +66,7 @@ export function SupplierDemo() {
         }}
       >
         <div
+          className="demo-form-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr auto",
@@ -177,6 +179,7 @@ export function SupplierDemo() {
           Raw → Structured
         </h2>
         <div
+          className="grid-2"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
