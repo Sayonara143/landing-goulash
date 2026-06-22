@@ -141,11 +141,23 @@ export function SupplierDemo() {
       title="Найти поставщиков"
     >
       <Reveal>
-        <p className="-mt-6 mb-6 max-w-2xl text-sm text-white/50">
+        <p className="-mt-6 mb-5 max-w-2xl text-sm text-white/50">
           Для демонстрации используется сохранённый (cached) результат поиска —
           чтобы не зависеть от лимитов поискового API и доступности сайтов.
           Логика продукта при этом настоящая.
         </p>
+      </Reveal>
+
+      <Reveal delay={0.03}>
+        <a
+          href="http://161.104.19.182/app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mb-6 inline-flex items-center gap-2 rounded-lg border border-accent/40 bg-accent/10 px-5 py-2.5 text-sm font-medium text-accent transition hover:bg-accent/15"
+        >
+          Открыть рабочее приложение
+          <span aria-hidden="true">↗</span>
+        </a>
       </Reveal>
 
       <Reveal delay={0.05}>
