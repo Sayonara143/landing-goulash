@@ -1,63 +1,181 @@
-import { Section } from "@/components/ui/Section";
-import { Reveal } from "@/components/ui/Reveal";
 import { scoreModel } from "@/lib/supplier";
 
-const total = scoreModel.reduce((acc, c) => acc + c.weight, 0);
-
-// Прозрачная модель оценки поставщика — помогает решить, кому звонить первым.
 export function ScoreModel() {
   return (
-    <Section id="score" eyebrow="Принятие решения" title="Supplier Score">
-      <Reveal>
-        <p className="-mt-6 mb-8 max-w-2xl text-white/70">
-          Score = сумма весов по простым, объяснимым критериям. Цель — не
-          «магическая оценка», а понятный приоритет обзвона.
-        </p>
-      </Reveal>
-
-      <div className="grid gap-5 lg:grid-cols-[1.4fr_1fr]">
-        <Reveal>
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-surface/60">
-            <table className="w-full border-collapse text-left">
-              <thead>
-                <tr className="border-b border-white/10 text-xs uppercase tracking-wide text-white/40">
-                  <th className="p-4 font-medium">Критерий</th>
-                  <th className="p-4 text-right font-medium">Вес</th>
-                </tr>
-              </thead>
-              <tbody>
-                {scoreModel.map((c) => (
-                  <tr
-                    key={c.label}
-                    className="border-b border-white/5 transition last:border-0 hover:bg-white/[0.03]"
-                  >
-                    <td className="p-4 text-white/75">{c.label}</td>
-                    <td className="p-4 text-right font-medium text-accent">
-                      {c.weight}
-                    </td>
-                  </tr>
-                ))}
-                <tr className="bg-white/[0.02]">
-                  <td className="p-4 font-semibold text-white">Итого</td>
-                  <td className="p-4 text-right font-semibold text-white">
-                    {total}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+    <section
+      style={{
+        maxWidth: 1180,
+        margin: "0 auto",
+        padding: "30px 24px 74px",
+        fontFamily: "'Space Grotesk', sans-serif",
+        color: "#111",
+      }}
+    >
+      <span
+        style={{
+          display: "inline-block",
+          background: "#7C66F0",
+          color: "#fff",
+          border: "3px solid #111",
+          fontWeight: 700,
+          fontSize: 13,
+          letterSpacing: 1.5,
+          textTransform: "uppercase",
+          padding: "6px 13px",
+          borderRadius: 9,
+          boxShadow: "3px 3px 0 #111",
+        }}
+      >
+        Принятие решения
+      </span>
+      <h2
+        style={{
+          fontFamily: "'Archivo Black', sans-serif",
+          fontSize: "clamp(32px,5vw,56px)",
+          lineHeight: 1,
+          margin: "22px 0 0",
+        }}
+      >
+        Supplier Score
+      </h2>
+      <p
+        style={{
+          fontSize: 16,
+          lineHeight: 1.55,
+          fontWeight: 500,
+          color: "#3a352b",
+          maxWidth: 680,
+          margin: "18px 0 0",
+        }}
+      >
+        Score = сумма весов по простым, объяснимым критериям. Цель — не
+        «магическая оценка», а понятный приоритет обзвона.
+      </p>
+      <div
+        style={{
+          marginTop: 32,
+          display: "grid",
+          gridTemplateColumns: "1.3fr 0.7fr",
+          gap: 22,
+          alignItems: "start",
+        }}
+      >
+        <div
+          style={{
+            background: "#fff",
+            border: "3px solid #111",
+            borderRadius: 14,
+            boxShadow: "6px 6px 0 #111",
+            overflow: "hidden",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              padding: "14px 20px",
+              borderBottom: "3px solid #111",
+              background: "#FFCE2E",
+              fontWeight: 700,
+              fontSize: 13,
+              letterSpacing: 1,
+              textTransform: "uppercase",
+            }}
+          >
+            <span>Критерий</span>
+            <span>Вес</span>
           </div>
-        </Reveal>
-
-        <Reveal delay={0.08}>
-          <div className="flex h-full flex-col justify-center rounded-2xl border border-emerald-500/20 bg-surface/60 p-6 text-center">
-            <p className="text-5xl font-bold text-emerald-400">82/100</p>
-            <p className="mt-3 text-white/70">
-              «Мясной Дом» — стоит связаться в первую очередь: есть контакты,
-              регион, документы и сертификаты.
-            </p>
+          {scoreModel.map((item) => (
+            <div
+              key={item.label}
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                padding: "15px 20px",
+                borderBottom: "2px solid #e4ddcd",
+              }}
+            >
+              <span style={{ fontWeight: 600, fontSize: 16 }}>
+                {item.label}
+              </span>
+              <span
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontWeight: 700,
+                  background: "#45D4E8",
+                  border: "2.5px solid #111",
+                  borderRadius: 7,
+                  padding: "2px 10px",
+                }}
+              >
+                {item.weight}
+              </span>
+            </div>
+          ))}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: "16px 20px",
+              background: "#111",
+              color: "#F4EFE2",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "'Archivo Black', sans-serif",
+                fontSize: 18,
+              }}
+            >
+              Итого
+            </span>
+            <span
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontWeight: 700,
+                fontSize: 18,
+              }}
+            >
+              100
+            </span>
           </div>
-        </Reveal>
+        </div>
+        <div
+          style={{
+            background: "#57D785",
+            border: "3px solid #111",
+            borderRadius: 14,
+            boxShadow: "6px 6px 0 #111",
+            padding: "34px 26px",
+            textAlign: "center",
+          }}
+        >
+          <div
+            style={{
+              fontFamily: "'Archivo Black', sans-serif",
+              fontSize: 64,
+              lineHeight: 1,
+              color: "#111",
+            }}
+          >
+            82<span style={{ fontSize: 32 }}>/100</span>
+          </div>
+          <p
+            style={{
+              margin: "18px 0 0",
+              fontSize: 15,
+              lineHeight: 1.55,
+              fontWeight: 600,
+              color: "#0c2a18",
+            }}
+          >
+            «Мясной Дом» — стоит связаться в первую очередь: есть контакты,
+            регион, документы и сертификаты.
+          </p>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

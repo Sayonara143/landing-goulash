@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" className={inter.variable}>
-      <body className="bg-bg text-white antialiased">
+      <body className="bg-[#F4EFE2] text-[#111] antialiased">
         {/* Структурированные данные для SEO */}
         <script
           type="application/ld+json"

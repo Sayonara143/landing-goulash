@@ -1,59 +1,144 @@
-import { Section } from "@/components/ui/Section";
-import { Reveal } from "@/components/ui/Reveal";
-import { engineeringDecisions, antiHallucination } from "@/lib/supplier";
+import { antiHallucination, engineeringDecisions } from "@/lib/supplier";
 
-// Инженерная зрелость: почему такая архитектура + как снижаю риск ошибок LLM.
 export function EngineeringNotes() {
   return (
-    <Section
-      id="engineering"
-      eyebrow="Инженерные решения"
-      title="Почему такая архитектура"
+    <section
+      id="architecture"
+      style={{
+        maxWidth: 1180,
+        margin: "0 auto",
+        padding: "30px 24px 74px",
+        fontFamily: "'Space Grotesk', sans-serif",
+        color: "#111",
+      }}
     >
-      <div className="grid gap-5 lg:grid-cols-[1.3fr_1fr]">
-        <Reveal>
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-surface/60">
-            <table className="w-full border-collapse text-left">
-              <thead>
-                <tr className="border-b border-white/10 text-xs uppercase tracking-wide text-white/40">
-                  <th className="p-4 font-medium">Решение</th>
-                  <th className="p-4 font-medium">Почему</th>
-                </tr>
-              </thead>
-              <tbody>
-                {engineeringDecisions.map((d) => (
-                  <tr
-                    key={d.decision}
-                    className="border-b border-white/5 align-top transition last:border-0 hover:bg-white/[0.03]"
-                  >
-                    <td className="whitespace-nowrap p-4 font-medium text-accent">
-                      {d.decision}
-                    </td>
-                    <td className="p-4 text-white/70">{d.why}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </Reveal>
-
-        {/* Anti-hallucination layer */}
-        <Reveal delay={0.08}>
-          <div className="flex h-full flex-col rounded-2xl border border-accent2/25 bg-surface/60 p-6">
-            <h3 className="mb-4 text-lg font-semibold text-white">
-              Anti-hallucination layer
-            </h3>
-            <ul className="space-y-2.5 text-white/70">
-              {antiHallucination.map((item) => (
-                <li key={item} className="flex gap-2.5">
-                  <span className="mt-1 text-accent2">→</span>
+      <span
+        style={{
+          display: "inline-block",
+          background: "#FFCE2E",
+          color: "#111",
+          border: "3px solid #111",
+          fontWeight: 700,
+          fontSize: 13,
+          letterSpacing: 1.5,
+          textTransform: "uppercase",
+          padding: "6px 13px",
+          borderRadius: 9,
+          boxShadow: "3px 3px 0 #111",
+        }}
+      >
+        Инженерные решения
+      </span>
+      <h2
+        style={{
+          fontFamily: "'Archivo Black', sans-serif",
+          fontSize: "clamp(32px,5vw,56px)",
+          lineHeight: 1,
+          margin: "22px 0 32px",
+        }}
+      >
+        Почему такая архитектура
+      </h2>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1.25fr 0.75fr",
+          gap: 22,
+          alignItems: "start",
+        }}
+      >
+        <div style={{ display: "grid", gap: 14 }}>
+          {engineeringDecisions.map((item) => (
+            <div
+              key={item.decision}
+              className="neo-architecture-card"
+              style={{
+                background: "#fff",
+                border: "3px solid #111",
+                borderRadius: 13,
+                boxShadow: "4px 4px 0 #111",
+                display: "grid",
+                gridTemplateColumns: "0.8fr 1.2fr",
+              }}
+            >
+              <div
+                style={{
+                  padding: "16px 18px",
+                  borderRight: "3px solid #111",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <span
+                  style={{
+                    fontWeight: 700,
+                    fontSize: 16,
+                    color: "#7C66F0",
+                  }}
+                >
+                  {item.decision}
+                </span>
+              </div>
+              <div
+                style={{
+                  padding: "16px 18px",
+                  fontSize: 15,
+                  lineHeight: 1.5,
+                  fontWeight: 500,
+                }}
+              >
+                {item.why}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div
+          style={{
+            background: "#111",
+            border: "3px solid #111",
+            borderRadius: 14,
+            boxShadow: "6px 6px 0 #FF73B3",
+            padding: 24,
+          }}
+        >
+          <h3
+            style={{
+              fontFamily: "'Archivo Black', sans-serif",
+              fontSize: 22,
+              margin: "0 0 18px",
+              color: "#F4EFE2",
+            }}
+          >
+            Anti-hallucination layer
+          </h3>
+          <div style={{ display: "grid", gap: 14 }}>
+            {antiHallucination.map((item) => (
+              <div
+                key={item}
+                style={{
+                  display: "flex",
+                  gap: 11,
+                  alignItems: "flex-start",
+                  color: "#F4EFE2",
+                }}
+              >
+                <span
+                  style={{
+                    color: "#57D785",
+                    fontWeight: 700,
+                    fontFamily: "'Space Mono', monospace",
+                  }}
+                >
+                  →
+                </span>
+                <span style={{ fontSize: 15, lineHeight: 1.45, fontWeight: 500 }}>
                   {item}
-                </li>
-              ))}
-            </ul>
+                </span>
+              </div>
+            ))}
           </div>
-        </Reveal>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

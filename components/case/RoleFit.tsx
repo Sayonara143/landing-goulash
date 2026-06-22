@@ -1,41 +1,102 @@
-import { Section } from "@/components/ui/Section";
-import { Reveal } from "@/components/ui/Reveal";
 import { roleFit } from "@/lib/supplier";
 
-// Таблица соответствия: что нужно роли ↔ что у меня есть.
-// Сильнее простого списка технологий — бьёт прямо в требования вакансии.
 export function RoleFit() {
   return (
-    <Section
-      id="relevance"
-      eyebrow="Почему я подхожу"
-      title="Опыт под профиль роли"
+    <div
+      style={{
+        background: "#F4EFE2",
+        fontFamily: "'Space Grotesk', sans-serif",
+        color: "#111",
+      }}
     >
-      <Reveal>
-        <div className="overflow-hidden rounded-2xl border border-white/10 bg-surface/60">
-          <table className="w-full border-collapse text-left">
-            <thead>
-              <tr className="border-b border-white/10 text-sm uppercase tracking-wide text-white/50">
-                <th className="w-2/5 p-4 font-medium sm:p-5">Что нужно роли</th>
-                <th className="p-4 font-medium sm:p-5">Что у меня есть</th>
-              </tr>
-            </thead>
-            <tbody>
-              {roleFit.map((row) => (
-                <tr
-                  key={row.need}
-                  className="border-b border-white/5 align-top transition last:border-0 hover:bg-white/[0.03]"
+      <section
+        id="relevance"
+        style={{ maxWidth: 1180, margin: "0 auto", padding: "70px 24px" }}
+      >
+        <span
+          style={{
+            display: "inline-block",
+            background: "#45D4E8",
+            color: "#111",
+            border: "3px solid #111",
+            fontWeight: 700,
+            fontSize: 13,
+            letterSpacing: 1.5,
+            textTransform: "uppercase",
+            padding: "6px 13px",
+            borderRadius: 9,
+            boxShadow: "3px 3px 0 #111",
+          }}
+        >
+          Почему я подхожу
+        </span>
+        <h2
+          style={{
+            fontFamily: "'Archivo Black', sans-serif",
+            fontSize: "clamp(32px,5vw,56px)",
+            lineHeight: 1,
+            margin: "22px 0 0",
+          }}
+        >
+          Опыт под профиль роли
+        </h2>
+        <div style={{ marginTop: 36, display: "grid", gap: 16 }}>
+          {roleFit.map((row, index) => (
+            <div
+              key={row.need}
+              className="neo-relevance-card"
+              style={{
+                background: "#fff",
+                border: "3px solid #111",
+                borderRadius: 14,
+                boxShadow: "5px 5px 0 #111",
+                display: "grid",
+                gridTemplateColumns: "0.85fr 1.15fr",
+                gap: 0,
+              }}
+            >
+              <div
+                style={{
+                  padding: "22px 24px",
+                  borderRight: "3px solid #111",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontWeight: 700,
+                    background: "#FFCE2E",
+                    border: "2.5px solid #111",
+                    borderRadius: 8,
+                    padding: "2px 9px",
+                    fontSize: 14,
+                  }}
                 >
-                  <td className="p-4 font-medium text-accent sm:p-5">
-                    {row.need}
-                  </td>
-                  <td className="p-4 text-white/75 sm:p-5">{row.have}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span style={{ fontWeight: 700, fontSize: 18 }}>
+                  {row.need}
+                </span>
+              </div>
+              <div
+                style={{
+                  padding: "22px 24px",
+                  display: "flex",
+                  alignItems: "center",
+                  fontSize: 16,
+                  lineHeight: 1.5,
+                  fontWeight: 500,
+                }}
+              >
+                {row.have}
+              </div>
+            </div>
+          ))}
         </div>
-      </Reveal>
-    </Section>
+      </section>
+    </div>
   );
 }

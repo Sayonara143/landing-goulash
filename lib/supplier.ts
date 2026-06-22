@@ -303,10 +303,6 @@ export const engineeringDecisions: { decision: string; why: string }[] = [
     why: "Жёсткий контроль структуры ответа и валидация полей.",
   },
   {
-    decision: "PostgreSQL",
-    why: "Хранение поставщиков, источников и результатов прогонов поиска.",
-  },
-  {
     decision: "Cached demo",
     why: "Демо не ломается из-за лимитов API и недоступности сайтов.",
   },
@@ -337,7 +333,7 @@ export const roleFit: { need: string; have: string }[] = [
   },
 ];
 
-// --- Раздел кейса для отдельной страницы /case/supplier-intelligence --------
+// --- Описание кейса Supplier Intelligence -----------------------------------
 
 export const caseStudy = {
   title:

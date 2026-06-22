@@ -13,8 +13,8 @@ export const profile = {
   experienceYears: "3 года 10 месяцев",
   email: "alsbykov.work@gmail.com",
   telegram: "https://t.me/alsbykov",
-  github: "https://github.com/alsbykov", // TODO: заменить на реальный профиль
-  resume: "/resume.pdf", // TODO: положить PDF резюме в public/
+  github: "https://github.com/Sayonara143",
+  resume: "https://ekaterinburg.hh.ru/resume/0f9512afff0c21cb330039ed1f783850716e46",
   phone: "+7 (992) 011-76-30",
   url: "https://example.com", // TODO: заменить на прод-домен
 } as const;
@@ -132,7 +132,6 @@ export const projects: Project[] = [
     blurb:
       "Главный кейс: по категории и региону генерирует B2B-запросы, парсит сайты поставщиков, извлекает контакты/доставку/документы через LLM и строит таблицу с оценкой приоритета.",
     tags: ["Python", "FastAPI", "LLM-extraction", "Search API", "PostgreSQL"],
-    href: "/case/supplier-intelligence",
   },
   {
     title: "API-интеграционный слой",

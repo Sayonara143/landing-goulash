@@ -2,12 +2,31 @@ import { profile } from "@/lib/data";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 py-10">
-      <div className="container-x flex flex-col items-center justify-between gap-3 text-sm text-white/50 sm:flex-row">
-        <p>
-          © {new Date().getFullYear()} {profile.name}. {profile.location}.
-        </p>
-        <p>Сделано на Next.js · framer-motion</p>
+    <footer
+      style={{
+        background: "#111",
+        borderTop: "3px solid #F4EFE2",
+        padding: "26px 24px",
+        fontFamily: "'Space Grotesk', sans-serif",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: 1180,
+          margin: "0 auto",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: 16,
+          flexWrap: "wrap",
+          color: "#8c8676",
+          fontWeight: 600,
+          fontSize: 14,
+        }}
+      >
+        <span>
+          © 2026 {profile.name} · {profile.location}
+        </span>
       </div>
     </footer>
   );

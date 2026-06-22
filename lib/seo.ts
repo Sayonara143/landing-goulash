@@ -17,7 +17,7 @@ export function personJsonLd() {
       addressLocality: "Екатеринбург",
       addressCountry: "RU",
     },
-    sameAs: [profile.telegram],
+    sameAs: [profile.telegram, profile.github, profile.resume],
     knowsAbout: [
       "Backend Development",
       "API Integration",

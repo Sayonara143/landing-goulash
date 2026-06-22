@@ -1,0 +1,109 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .cat-fill {
+        fill: #ff8a00;
+        stroke: #000;
+        stroke-width: 18;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+      }
+
+      .line {
+        fill: none;
+        stroke: #000;
+        stroke-width: 14;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .eye {
+        fill: #fff;
+        stroke: #000;
+        stroke-width: 14;
+      }
+
+      .black {
+        fill: #000;
+      }
+    </style>
+  </defs>
+
+  <!-- Хвост -->
+  <path class="cat-fill"
+        d="M850 885
+           C960 850 1015 720 1055 590
+           C1075 615 1090 650 1090 700
+           C1090 850 995 1010 850 1040
+           Z"/>
+
+  <!-- Тело -->
+  <path class="cat-fill"
+        d="M325 690
+           C275 750 270 880 305 990
+           C345 1080 480 1085 610 1085
+           C745 1085 875 1080 910 990
+           C955 875 930 745 875 690
+           Z"/>
+
+  <!-- Лапы -->
+  <path class="cat-fill" d="M350 970 L350 1085 L435 1085 L450 985 Z"/>
+  <path class="cat-fill" d="M525 990 L515 1085 L600 1085 L610 990 Z"/>
+  <path class="cat-fill" d="M695 990 L705 1085 L790 1085 L770 990 Z"/>
+
+  <!-- Пальцы -->
+  <line class="line" x1="378" y1="1055" x2="378" y2="1085"/>
+  <line class="line" x1="405" y1="1055" x2="405" y2="1085"/>
+  <line class="line" x1="555" y1="1058" x2="555" y2="1085"/>
+  <line class="line" x1="585" y1="1058" x2="585" y2="1085"/>
+  <line class="line" x1="735" y1="1058" x2="735" y2="1085"/>
+  <line class="line" x1="765" y1="1058" x2="765" y2="1085"/>
+
+  <!-- Уши -->
+  <path class="cat-fill" d="M365 280 L390 105 L535 320 Z"/>
+  <path class="cat-fill" d="M780 320 L920 105 L930 330 Z"/>
+
+  <!-- Голова -->
+  <path class="cat-fill"
+        d="M230 395
+           C275 260 430 200 600 205
+           C770 200 920 260 965 395
+           C1015 550 935 690 745 710
+           L455 710
+           C265 690 180 550 230 395
+           Z"/>
+
+  <!-- Левый глаз -->
+  <ellipse class="eye" cx="505" cy="380" rx="75" ry="70" transform="rotate(-8 505 380)"/>
+  <circle class="black" cx="520" cy="390" r="24"/>
+
+  <!-- Правый глаз -->
+  <ellipse class="eye" cx="760" cy="400" rx="78" ry="70" transform="rotate(15 760 400)"/>
+  <circle class="black" cx="780" cy="405" r="24"/>
+
+  <!-- Нос -->
+  <path class="black"
+        d="M595 475
+           L655 475
+           L645 525
+           Q625 545 605 525
+           Z"/>
+
+  <!-- Рот -->
+  <path class="line"
+        d="M625 525
+           C625 575 590 610 555 575"/>
+  <path class="line"
+        d="M625 525
+           C625 575 660 610 700 570"/>
+
+  <!-- Усы слева -->
+  <line class="line" x1="355" y1="410" x2="170" y2="375"/>
+  <line class="line" x1="360" y1="485" x2="115" y2="485"/>
+  <line class="line" x1="350" y1="535" x2="125" y2="585"/>
+
+  <!-- Усы справа -->
+  <line class="line" x1="850" y1="410" x2="1055" y2="360"/>
+  <line class="line" x1="860" y1="485" x2="1110" y2="485"/>
+  <line class="line" x1="850" y1="535" x2="1030" y2="550"/>
+</svg>

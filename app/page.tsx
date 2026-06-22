@@ -1,10 +1,8 @@
-import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
 import { Nav } from "@/components/sections/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { RoleFit } from "@/components/case/RoleFit";
 import { SupplierCase } from "@/components/case/SupplierCase";
 import { SupplierDemo } from "@/components/case/SupplierDemo";
-import { RawToStructured } from "@/components/case/RawToStructured";
 import { ScoreModel } from "@/components/case/ScoreModel";
 import { EngineeringNotes } from "@/components/case/EngineeringNotes";
 import { Projects } from "@/components/sections/Projects";
@@ -16,14 +14,12 @@ import { Footer } from "@/components/sections/Footer";
 export default function Home() {
   return (
     <>
-      <AnimatedBackground />
       <Nav />
       <main>
         <Hero />
         <RoleFit />
         <SupplierCase />
         <SupplierDemo />
-        <RawToStructured />
         <ScoreModel />
         <EngineeringNotes />
         <Projects />
